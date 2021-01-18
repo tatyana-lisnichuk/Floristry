@@ -1,17 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ul>
+  <ServicePage v-for="page in servicePageList" :pageTitle="page.pageTitle" :description="page.description" :key="page.pageTitle"></ServicePage>
+    </ul>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import ServicePage from '@/components/ServicePage'
+ 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+ ServicePage
+  },
+  data(){
+    return{
+    
+    servicePageList:[
+      {
+        // mainImg:'../assets/imgs/service-page1-main-img.jpg',
+        pageTitle:'букеты на мероприятия',
+        description:'У нас есть огромное разноообразие букетов на любое событие. Вы сможете приобрести как нежный букет, так и яркий, а также мужские, круглые, вертикалье, веерообразные, букеты-зонтики, букеты в вегетативной технике и много  других экзотических видов.',
+        // sliderImgs:["../assets/imgs/1.jpg", "../assets/imgs/2.jpg", "../assets/imgs/3.jpg", "../assets/imgs/4.jpg"]
+      }
+    ]
+    
+    }
   }
 }
 </script>
