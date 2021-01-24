@@ -1,7 +1,8 @@
 <template>
     <div class="service-page__body">
         <div class="service-page__left">
-         <!-- <img v-bind:src="{{servicePage.mainImg}}"> -->
+
+         <!-- <img :src="require(mainImg)"> -->
           <div class="logo">
           <img src="../assets/imgs/Logo.svg">
           </div>
@@ -16,7 +17,7 @@
             <div>
             <h2>{{pageTitle}}</h2>
             <p class="service-page__text">{{description}}</p>
-            <button>Заказать</button>
+            <MainButton buttonName="Заказать"></MainButton>
             </div>
             <section>
               here will be slider
@@ -43,13 +44,18 @@
     </div>
 </template>
 <script>
+import MainButton from '@/components/MainButton';
+
 export default{
   name: 'ServicePage',
     props:{
-        // mainImg,
+        // mainImg:String,
         pageTitle:String,
         description:String,
         // sliderImgs
+      },
+      components:{
+        MainButton
       },
   data(){
     return{
@@ -72,7 +78,6 @@ export default{
 .service-page__body{
 background-color: #3B181E;
 display: flex;
-
 gap:100px;
 min-height: 1080px;
 max-width: 1920px;
@@ -123,9 +128,7 @@ header{
 .service-page__left{
   position:relative;
   width: 50%;
-  background-image:url('../assets/imgs/service-page1-main-img.jpg');
-  /* background-image:url({{servicePage.mainImg}}); */
-
+  /* background-image:url('../assets/imgs/service-page1-main-img.jpg'); */
   background-repeat: no-repeat;
 }
 .logo{
@@ -133,7 +136,7 @@ header{
   top:87px;
   left:95px;
 }
-button{
+/* button{
   color:currentColor;
   background-color: #3B181E;
   border:1px solid white;
@@ -149,7 +152,7 @@ button{
 button:hover{
 color:#000000;
 background-color: #fff;
-}
+} */
 .service-page__slider{
   display:flex;
   gap:20px;
