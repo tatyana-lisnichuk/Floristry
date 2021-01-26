@@ -1,38 +1,37 @@
 <template>
     <div class="service-page__body">
         <div class="service-page__left">
-
-         <!-- <img :src="require(mainImg)"> -->
           <div class="logo">
-          <img src="../assets/imgs/Logo.svg">
+          <img src="../../public/assets/imgs/svg/Logo.svg">
           </div>
+          <img :src="img">
         </div>
         <div class="service-page__right">
           <header class="service-page__header">
             <div>
-              <img src="../assets/imgs/Menu-burger.svg">
+              <!-- <img src="../assets/imgs/Menu-burger.svg"> -->
             </div>
           </header>
             <main>
             <div>
             <h2>{{pageTitle}}</h2>
             <p class="service-page__text">{{description}}</p>
-            <MainButton buttonName="Заказать"></MainButton>
+            <BrownButton buttonName="Заказать"></BrownButton>
             </div>
             <section>
               here will be slider
               <div class="service-page__slider">
                 <div>
-                <img src="../assets/imgs/5.jpg">
+                <!-- <img src="../assets/imgs/5.jpg"> -->
               </div>
               <div>
-                <img src="../assets/imgs/6.jpg">
+                <!-- <img src="../assets/imgs/6.jpg"> -->
               </div>
               <div>
-                <img src="../assets/imgs/7.jpg">
+                <!-- <img src="../assets/imgs/7.jpg"> -->
               </div>
               <div>
-                <img src="../assets/imgs/8.jpg">
+                <!-- <img src="../assets/imgs/8.jpg"> -->
               </div>
               
 
@@ -44,32 +43,38 @@
     </div>
 </template>
 <script>
-import MainButton from '@/components/MainButton';
+import BrownButton from '@/components/BrownButton';
 
 export default{
   name: 'ServicePage',
     props:{
-        // mainImg:String,
+        mainImg:String,
         pageTitle:String,
         description:String,
         // sliderImgs
       },
       components:{
-        MainButton
+        BrownButton
       },
   data(){
     return{
       // servicePage: {
-      //   mainImg:'@assets/imgs/service-page1-main-img.jpg',
-      //   pageTitle:'букеты на мероприятия',
-      //   description:'У нас есть огромное разноообразие букетов на любое событие. Вы сможете приобрести как нежный букет, так и яркий, а также мужские, круглые, вертикалье, веерообразные, букеты-зонтики, букеты в вегетативной технике и много  других экзотических видов.',
+        // mainImg:'@assets/imgs/service-page1-main-img.jpg',
+        // pageTitle:'букеты на мероприятия',
+        // description:'У нас есть огромное разноообразие букетов на любое событие. Вы сможете приобрести как нежный букет, так и яркий, а также мужские, круглые, вертикалье, веерообразные, букеты-зонтики, букеты в вегетативной технике и много  других экзотических видов.',
       //   sliderImgs:["../assets/imgs/1.jpg", "../assets/imgs/2.jpg", "../assets/imgs/3.jpg", "../assets/imgs/4.jpg"]
       // }
     };
   },
+  computed: {
+    img() {
+      return '../assets/imgs/' + this.mainImg
+    }
+  }
+
 }
 </script>
-<style scope>
+<style>
 *{
   box-sizing: border-box;
   margin: 0;
@@ -131,11 +136,11 @@ header{
   /* background-image:url('../assets/imgs/service-page1-main-img.jpg'); */
   background-repeat: no-repeat;
 }
-.logo{
+/* .logo{
   position:absolute;
   top:87px;
   left:95px;
-}
+} */
 /* button{
   color:currentColor;
   background-color: #3B181E;

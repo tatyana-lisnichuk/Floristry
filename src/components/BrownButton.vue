@@ -1,18 +1,19 @@
 <template>
 <div>
-  <button>{{buttonName}}</button>
+  <a href="#" class="brown-btn">{{buttonName}}</a>
+  <!-- <button class="brown-btn">{{buttonName}}</button> -->
 </div>
 </template>
 <script>
 export default{
-  name: 'MainButton',
+  name: 'BrownButton',
   props:{
   buttonName:String,
   }
 }
 </script>
 <style>
-button{
+.brown-btn{
   color:currentColor;
   background-color: #3B181E;
   border:1px solid white;
@@ -25,7 +26,7 @@ button{
   bottom: 0;
   left:0;
 }
-button:hover{
+.brown-btn:hover{
 color:#000000;
 background-color: #fff;
 }
