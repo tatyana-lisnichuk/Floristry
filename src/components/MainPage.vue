@@ -46,7 +46,7 @@
             <div class="sales__item-2-3-content">
               <div class="sales__img">
                 <img
-                src="../../public/assets/imgs/sales.jpg"
+                src="assets/imgs/sales.jpg"
                 alt="flowers"
                 >
               </div>

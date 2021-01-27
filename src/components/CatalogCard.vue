@@ -33,7 +33,7 @@ export default{
       },
       computed: {
     catalogCardImg() {
-      return '../assets/imgs/catalog/' + this.cardImg
+      return './assets/imgs/catalog/' + this.cardImg
     }
   }
 }

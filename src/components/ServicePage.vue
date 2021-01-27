@@ -68,7 +68,7 @@ export default{
   },
   computed: {
     img() {
-      return '../assets/imgs/' + this.mainImg
+      return './assets/imgs/' + this.mainImg
     }
   }
 

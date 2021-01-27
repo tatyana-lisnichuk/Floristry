@@ -2,7 +2,7 @@
 <div class="scroll">
  <div class="scroll__innerWrapper">
     <a href="#" class="icon-scroll-img">
-    <img src="../../public/assets/imgs/svg/scroll.svg" alt="scroll">
+    <img src="assets/imgs/svg/scroll.svg" alt="scroll">
     </a>
   </div>
 </div>

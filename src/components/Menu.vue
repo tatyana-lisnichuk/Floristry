@@ -20,10 +20,8 @@
      
      <Burger></Burger>
    </nav>
-
    <Sidebar>
      <Logo class="menuLogo"></Logo>
-    
      <ul class="sidebar-panel-nav">
        <li><a href="#">свадебная флористика</a></li>
        <li><a href="#">букеты на любые мероприятия</a></li>
@@ -94,40 +92,31 @@ nav {
   background:inherit;
 } */
 
-
-/* #fullMenu{
-   height: 100%;
-   overflow:hidden;
- }
-
-body{
-   border: 0; margin: 0; padding: 0;
-   font-family: 'Lato';
-   height: 100%;
-   background: rgb(101,31,87);
-   background: linear-gradient(45deg, rgba(101,31,87,1) 0%, rgba(225,113,87,1) 48%, rgba(249,248,113,1) 100%);
- } */
-
  .menuLogo {
-   margin:auto;
+   margin:96px auto 160px auto;
    
  }
-
  .main-nav {
    display: flex;
+
    justify-content: space-between;
    padding: 0.5rem 0.8rem;
  }
 
- ul.sidebar-panel-nav {
-   list-style-type: none;
- }
-
  ul.sidebar-panel-nav > li > a {
-   color: #fff;
-   text-decoration: none;
-   font-size: 1.5rem;
+   color: rgba(255, 255, 255, 0.5);
+   font-size: 2.2rem;
    display: block;
    padding-bottom: 0.5em;
+   text-transform: uppercase;
+   margin:40px auto;
+   line-height: 39px;
+   letter-spacing: 0.09em;
+   transition: all 0.2s ease-in-out;
+ }
+ ul.sidebar-panel-nav > li > a:hover{
+color:#ffffff;
+transform: scale(1.2);
+
  }
 </style>
