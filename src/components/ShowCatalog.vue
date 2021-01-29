@@ -1,7 +1,7 @@
 <template>
 <div class="showCatalog">
   <div class="showCatalog__innerWrapper">
-    <div class="showCatalog__text"><a href="#">смотреть каталог <i class="fas fa-arrow-right"></i></a></div>
+    <div class="showCatalog__text"><a href="#catalog">смотреть каталог <i class="fas fa-arrow-right"></i></a></div>
   </div>
 </div>
 </template>

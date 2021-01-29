@@ -26,7 +26,7 @@ export default{
   gap:1.7rem;
 }
 .fab{
-  color:white;
+  /* color:white; */
   font-size: 1.7rem;
 }
 .fab:hover{

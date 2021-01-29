@@ -1,6 +1,6 @@
 <template>
 <div class="logo">
-  <a href="#">
+  <a href="#main-page">
     <img  class="logo__img" src="../../public/assets/imgs/svg/Logo.svg" alt="logo">
   </a>
 </div>
@@ -14,6 +14,7 @@ export default{
 .logo {
   width: 10.9rem;
   height: 3.4rem;
+  z-index: 20;
 }
 .logo__img{
   width: 100%;

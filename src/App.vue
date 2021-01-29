@@ -1,18 +1,19 @@
 <template>
   <div class="app">
-  <MainPage></MainPage>
+  <!-- <MainPage></MainPage> -->
+  <router-view></router-view>
   <!-- <ServicePage v-for="page in servicePageList" :pageTitle="page.pageTitle" :description="page.description" :mainImg="page.mainImg" :key="page.pageTitle"></ServicePage> -->
   </div>
 </template>
 
 <script>
 // import ServicePage from '@/components/ServicePage'
-import MainPage from '@/components/MainPage'
+// import MainPage from '@/components/MainPage'
  
 export default {
   name: 'App',
   components: {
-MainPage, 
+// MainPage, 
 // ServicePage
   },
   data(){
@@ -31,8 +32,11 @@ MainPage,
 </script>
 
 <style>
+
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding:0;
 }
 .app {
   font-family: "Forum", cursive;
@@ -41,6 +45,7 @@ MainPage,
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   margin-top: 60px;
+ 
 }
 a{
   text-decoration:none;
@@ -55,4 +60,5 @@ li{
   list-style: none;
   padding-left: 0;
 }
+
 </style>

@@ -1,7 +1,6 @@
 <template>
-<div>
+<div class="brown-btn-wrapper">
   <a href="#" class="brown-btn">{{buttonName}}</a>
-  <!-- <button class="brown-btn">{{buttonName}}</button> -->
 </div>
 </template>
 <script>
@@ -13,6 +12,10 @@ export default{
 }
 </script>
 <style>
+.brown-btn-wrapper{
+  padding:15px 0;
+ 
+}
 .brown-btn{
   color:currentColor;
   background-color: #3B181E;
@@ -22,9 +25,7 @@ export default{
   cursor:pointer;
   transition: all 0.2s ease-in-out;
   outline: none;
-  position: absolute;
-  bottom: 0;
-  left:0;
+
 }
 .brown-btn:hover{
 color:#000000;

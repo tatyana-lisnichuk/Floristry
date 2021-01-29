@@ -3,11 +3,14 @@
 :class="{ 'active' : isBurgerActive }"
 @click.prevent="toggle">
 <slot>
-  <button type="button" class="burger-button" title="Menu">
-      <span class="burger-bar burger-bar--1"></span>
-      <span class="burger-bar burger-bar--2"></span>
-      <span class="burger-bar burger-bar--3"></span>
-  </button>
+  <div class="burger-wrapper">
+    <button type="button" class="burger-button" title="Menu">
+        <span class="burger-bar burger-bar--1"></span>
+        <span class="burger-bar burger-bar--2"></span>
+        <span class="burger-bar burger-bar--3"></span>
+    </button>
+    <span class="menuName">Меню</span>
+  </div>
 </slot>
 </div>
 </template>
@@ -17,25 +20,40 @@ import { store, mutations } from '@/store.js';
 export default{
   name: 'Burger',
 computed: {
-isBurgerActive() {
-    return store.isNavOpen
-}
+    isBurgerActive() {
+        return store.isNavOpen
+    }
 },
-methods: {
-toggle() {
-    mutations.toggleNav()
-}
-}
+  methods: {
+  toggle() {
+      mutations.toggleNav()
+      }
+    }
 }
 </script>
 <style>
+.menuName{
+  font-size: 1.25rem;
+   line-height: 1.4rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color:white;
+  margin-left: 2rem;
+  position:absolute;
+  top:3px;
+}
 .hidden {
   visibility: hidden;
 }
 button {
   cursor: pointer;
 }
+.burger-wrapper{
+  position:fixed;
+ max-width: 8rem;
 
+  z-index: 999;
+}
 /* remove blue outline */
 button:focus {
   outline: 0;
@@ -52,18 +70,19 @@ button:focus {
   background-color: transparent;
   pointer-events: all;
   transition: transform .6s cubic-bezier(.165,.84,.44,1);
+  
 }
-
 .burger-bar {
-  background-color: #130f40;
+  background-color: #fff;
   position: absolute;
   top: 50%;
   right: 6px;
   left: 6px;
-  height: 2px;
-  width: auto;
-  margin-top: -1px;
-  transition: transform .6s cubic-bezier(.165,.84,.44,1),opacity .3s cubic-bezier(.165,.84,.44,1),background-color .6s cubic-bezier(.165,.84,.44,1);
+  height: 1px;
+  width: 23px;
+  margin-top: -5px;
+  /* transition: transform .6s cubic-bezier(.165,.84,.44,1),opacity .3s cubic-bezier(.165,.84,.44,1),background-color .6s cubic-bezier(.165,.84,.44,1); */
+  
 }
 
 .burger-bar--1 {
@@ -95,11 +114,9 @@ button:focus {
 #burger.active .burger-bar {
   background-color: #fff;
 }
-
 #burger.active .burger-bar--1 {
   transform: rotate(45deg)
 }
-
 #burger.active .burger-bar--2 {
   opacity: 0;
 }

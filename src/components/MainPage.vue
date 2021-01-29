@@ -1,11 +1,7 @@
 <template>
  <div class="wrapper">
-      <section class="main">
-        <header class="container main__header">
-         <Logo></Logo>
-         <Menu></Menu>
-        <!-- <Menu v-for="item in items" :menuItem="item.itemName" :key="item.itemName" ></Menu>  -->
-        </header> 
+      <section class="main" id="main-page">
+       <Header class="container"></Header>
         <div class="main__description">
           <div class="main__title">флористика с душой</div>
           <DarkButton buttonName="Смотреть работы"></DarkButton>
@@ -18,7 +14,7 @@
         <div class="main__gradient"></div>
       </section>
 
-      <section class="catalog container">
+      <section class="catalog container" id="catalog">
            
          <CatalogTitle></CatalogTitle>
         <div class="catalog__grid">
@@ -73,40 +69,33 @@
 </template>
 
 <script>
-// import { component } from 'vue/types/umd'
+
 import DarkButton from '@/components/DarkButton';
-import Logo from '@/components/Logo';
-import Menu from '@/components/Menu';
 import SocialList from '@/components/SocialList';
 import Scroll from '@/components/Scroll';
 import ShowCatalog from '@/components/ShowCatalog';
 import CatalogTitle from '@/components/CatalogTitle';
 import CatalogCard from '@/components/CatalogCard';
 import BlackButton from '@/components/BlackButton';
+import Header from '@/components/Header';
+
 export default{
   name: 'MainPage',
   components:{
     DarkButton,
-    Logo,
-    Menu,
     SocialList,
     Scroll,
     ShowCatalog,
     CatalogTitle,
     CatalogCard,
-    BlackButton
+    BlackButton,
+    Header
     },
 
  data(){
-  //   return{
-  //   items:[
-  //     {itemName:'home'},
-  //     {itemName:'home1'},
-  //     {itemName:'home2'},
-  //     {itemName:'home3'}
-  //   ],
-  // show: false,
-    // }
+    return{
+
+    }
     }
  
  }
@@ -121,6 +110,7 @@ export default{
   width:100vw;
   background: #3b181e;
   padding-bottom:50px;
+
 }
 .container {
   max-width:1720px;
@@ -133,16 +123,12 @@ export default{
   min-height: 1020px;
   margin-bottom:0;
   background: url(../../public/assets/imgs/hero-img.jpg) no-repeat;
-  background-size: cover;
+  /* background-size: cover; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.main__header {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 80px;
-}
+
 
 .main__description {
   display: flex;
@@ -186,9 +172,7 @@ export default{
   min-height: 896px;
   padding-top: 170px;
   padding-bottom:96px;
-  /* background-color: green; */
   border-color: #3b181e;
-
 }
 
 .catalog__grid {
@@ -246,11 +230,6 @@ export default{
   margin-bottom: 52px;
 }
 
-/* .sales__item-2-3-content-media {
-  max-width: 697px;
-  display: block;
-  margin-left: auto;
-} */
 .sales__image {
   max-width: 697px;
   height: 100%;

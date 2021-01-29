@@ -51,9 +51,10 @@
     position: fixed;
     left: 0;
     top: 0;
+    width: 100vw;
     height: 100vh;
-    z-index: 999;
+    z-index: 800;
     padding: 3rem 20px 2rem 20px;
-    width: 1100px;
+
 }
 </style>

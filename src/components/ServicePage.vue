@@ -1,62 +1,56 @@
 <template>
-    <div class="service-page__body">
-        <div class="service-page__left">
-          <div class="logo">
-          <img src="../../public/assets/imgs/svg/Logo.svg">
-          </div>
-          <img :src="img">
-        </div>
-        <div class="service-page__right">
-          <header class="service-page__header">
-            <div>
-              <!-- <img src="../assets/imgs/Menu-burger.svg"> -->
+    <div class="wrapper service-page__main service-page" id="service-page">
+  
+        <Header class="service-page__header container"></Header>
+     
+            <div class="service-page__left" :style="{backgroundImage:'url('+ mainImg +')'}">
+              <!-- этот вариант с картинками работает!!! -->
+              <!-- <img class="service-page__img" :src="img"> -->
             </div>
-          </header>
-            <main>
-            <div>
-            <h2>{{pageTitle}}</h2>
-            <p class="service-page__text">{{description}}</p>
-            <BrownButton buttonName="Заказать"></BrownButton>
-            </div>
-            <section>
-              here will be slider
-              <div class="service-page__slider">
-                <div>
-                <!-- <img src="../assets/imgs/5.jpg"> -->
-              </div>
-              <div>
-                <!-- <img src="../assets/imgs/6.jpg"> -->
-              </div>
-              <div>
-                <!-- <img src="../assets/imgs/7.jpg"> -->
-              </div>
-              <div>
-                <!-- <img src="../assets/imgs/8.jpg"> -->
-              </div>
-              
+            <div class="service-page__right">
+                <main>
+                <div class="service-page__text-part">
+                  <h2>{{pageTitle}}</h2>
+                  <p class="service-page__text">{{description}}</p>
+                  <BrownButton class='service-page__brown-btn' buttonName="Заказать"></BrownButton>
+                </div>
+                  <SlickSlider></SlickSlider>
+                    <!-- <ServicePageSlider></ServicePageSlider> -->
 
-              </div>
-            </section>
-          </main>
-          <footer>Больше фотографий в профиле <i class="fab fa-instagram"></i></footer>
-        </div>
+              </main>
+              
+            </div>
+      <footer>Больше фотографий в профиле <i class="fab fa-instagram footer__insta"></i></footer>
     </div>
 </template>
 <script>
 import BrownButton from '@/components/BrownButton';
-
+import Header from '@/components/Header';
+import SlickSlider from './SlickSlider.vue';
 export default{
   name: 'ServicePage',
     props:{
         mainImg:String,
         pageTitle:String,
         description:String,
-        // sliderImgs
+       
       },
+        // slider_data:{
+        //   type:Array,
+        //   default:() => []
+        // },
+        //  slider_data_item:{
+        //   type: Object,
+        //   default:()=>{}
+        // },
+        
       components:{
-        BrownButton
+        BrownButton,
+        Header,
+        SlickSlider
       },
   data(){
+
     return{
       // servicePage: {
         // mainImg:'@assets/imgs/service-page1-main-img.jpg',
@@ -66,106 +60,91 @@ export default{
       // }
     };
   },
-  computed: {
-    img() {
-      return './assets/imgs/' + this.mainImg
-    }
-  }
-
+  //этот вариант с картинками работает!!!
+  // computed: {
+  //   img() {
+  //     return './assets/imgs/' + this.mainImg
+  //   }
+  // }
 }
 </script>
 <style>
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding:0;
+
+.service-page__main{
+  position: relative;
+  min-height: 1080px;
 }
-.service-page__body{
-background-color: #3B181E;
-display: flex;
-gap:100px;
-min-height: 1080px;
-max-width: 1920px;
-margin:auto;
-font-family: 'Forum', cursive;
-color:white;
-}
-h2{
+
+.service-page h2{
 font-size: 50px;
 text-transform: uppercase;
 letter-spacing: 9%;
-max-width: 365px;
+max-width: 370px;
 text-align: left;
 font-weight: 400;
 margin-bottom: 40px;
 }
-main p{
+
+.service-page main p{
   font-size: 18px;
   line-height: 150%;
   text-align: left;
-  padding-bottom:70px;
   margin-bottom: 30px;
 }
-main div{
-  position: relative;
+.service-page__text-part{
+padding-bottom:50px;
+
+position: relative;
 }
+.service-page__brown-btn{
+  position: absolute;
+  bottom: 0;
+  left:0;
+}
+
+.service-page main{
+  position: relative;
+  padding-top: 115px;
+   margin: auto 0;
+}
+
 .service-page__right{
   margin-left: 16px;
   width: 50%;
   position: relative;
-  padding-bottom:40px;
+  padding-left: 40px;
+  float:right;
 }
 .service-page__img{
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-header div {
-text-align: right;
-width: 100%;
-}
 .service-page__text{
   max-width: 565px;
 }
-header{
-  margin:80px 85px;
-}
+
 .service-page__left{
-  position:relative;
   width: 50%;
-  /* background-image:url('../assets/imgs/service-page1-main-img.jpg'); */
-  background-repeat: no-repeat;
-}
-/* .logo{
-  position:absolute;
-  top:87px;
-  left:95px;
-} */
-/* button{
-  color:currentColor;
-  background-color: #3B181E;
-  border:1px solid white;
-  padding:16px 30px;
-  text-transform: uppercase;
-  cursor:pointer;
-  transition: all 0.2s ease-in-out;
-  outline: none;
+  height: 100%;
   position: absolute;
-  bottom: 0;
-  left:0;
+  background-repeat: no-repeat;
+  object-fit:cover;
+  top:0;
+
 }
-button:hover{
-color:#000000;
-background-color: #fff;
-} */
 .service-page__slider{
   display:flex;
   gap:20px;
   margin-top:40px;
 }
-footer{
+.service-page footer{
 position:absolute;
 right: 95px;
 bottom: 30px;
+}
+.footer__insta{
+  font-size: 1rem;
+  margin-left: 30px;
 }
 </style>

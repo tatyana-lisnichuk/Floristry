@@ -19,8 +19,8 @@ export default{
   justify-content: center;
 }
 .scroll__innerWrapper{
-  width: 37px;
-  height: 56px;
+  width: 40px;
+  height: 59px;
   position: absolute;
   bottom: 0;
 }
