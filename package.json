@@ -7,6 +7,9 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.esm.js"
+  },
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
