@@ -4,7 +4,9 @@
    <div class="all-works-slider__wrapper">
    <h2>Наши работы</h2>
     <VueSlickCarousel v-bind="settings" >
-      <div class="slider-item" v-for="work in allWorksData" :key="work"><img class="all-work__img" v-bind:src="'./assets/imgs/' + work.img"></div>
+      <div class="slider-item" v-for="work in allWorksData" :key="work">
+        <img class="all-work__img" v-bind:src="'./assets/imgs/' + work.img">
+        </div>
     </VueSlickCarousel>
     </div>
 
@@ -32,7 +34,7 @@
   // // optional style for arrows & dots
   import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
   import Header from "@/components/Header";
-// import VueInstagram from '@/components/VueInstagram.vue';
+
   
 
   export default {
@@ -46,7 +48,7 @@
      
       },
     data(){
-
+      
       return{
       settings:{
         arrows: false,
@@ -79,9 +81,24 @@
           {img: '4-6.jpg' },
           {img: '4-7.jpg' },
           {img:'4-8.jpg'}
-      ]
+      ],
+      // info: null,
+      // loading: true,
+      // errored: false
       }
-    }
+    },
+    // mounted () {
+    // fetch
+    //   .get('https://api.unsplash.com/photos/?client_id=d0ebc52e406b1ac89f78ab30e1f6112338d663ef349501d65fb2f380e4987e9e')
+    //   .then(response => {
+    //     this.info = response.data
+    //   })
+      // .catch(error => {
+      //   console.log(error)
+      //   this.errored = true
+      // })
+      // .finally(() => this.loading = false)
+  // }
   }
 </script>
 <style>

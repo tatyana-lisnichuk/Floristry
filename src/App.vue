@@ -30,9 +30,7 @@ export default {
   color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  margin-top: 60px;
- 
+  text-align: center; 
 }
 a{
   text-decoration:none;
@@ -50,6 +48,14 @@ li{
 input{
   outline: none;
 }
+
+.container {
+  max-width:1720px;
+  padding: 0 50px;
+  width:100%;
+  margin: 0 auto;
+}
+
 /* buttons style */
 .brown-btn-wrapper{
   padding:15px 0;
@@ -69,7 +75,6 @@ input{
 color:#000000;
 background-color: #fff;
 }
-
 .black-btn {
   padding: 18px 30px;
   background: #010001;
@@ -86,8 +91,6 @@ background-color: #fff;
  background: #fff;
  color:black;
 }
-
-
 .dark-btn{
   padding: 19px 30px;
   background: rgba(0, 0, 0, 0.4);
@@ -110,7 +113,6 @@ background-color: #fff;
    padding:0 10px;
     transition: all 0.9 ease-in-out;
 }
-
 .slick-slide:hover{
   transform: scale(1.2);
 }

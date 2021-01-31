@@ -1,8 +1,8 @@
 // module.exports = {
 //     publicPath: ''
 // };
-module.exports = {
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/Floristry/'
-    : '/'
-};
+// module.exports = {
+//   publicPath: process.env.NODE_ENV === 'production'
+//     ? '/Floristry/'
+//     : '/'
+// };

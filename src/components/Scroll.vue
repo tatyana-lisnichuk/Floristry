@@ -1,9 +1,7 @@
 <template>
 <div class="scroll">
  <div class="scroll__innerWrapper">
-    <a href="#" class="icon-scroll-img">
     <img src="assets/imgs/svg/scroll.svg" alt="scroll">
-    </a>
   </div>
 </div>
 </template>

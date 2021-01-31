@@ -132,12 +132,7 @@ export default{
   padding-bottom:50px;
 
 }
-.container {
-  max-width:1720px;
-  padding: 0 20px;
-  width:100%;
-  margin: 0 auto;
-}
+
 
 .main {
   min-height: 1020px;
