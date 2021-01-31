@@ -1,15 +1,7 @@
 <template>
   <div class="slider-wrapper">
     <VueSlickCarousel v-bind="settings" >
-      <div><img src="/assets/imgs/2.jpg"></div>
-      <div ></div> 
-        <!-- <img :src="('./assets/imgs/' + slider_data_item.img)">-->
-      <div>3</div>
-      <div>4</div>
-      <div>5</div>
-      <div>6</div>
-      <div>7</div>
-      <div>8</div>
+      <div class="slider-item" v-for="img in sliderImgs" :key="img"><img v-bind:src="'/assets/imgs/' + img.img"></div>
     </VueSlickCarousel>
   </div>
 </template>
@@ -23,18 +15,9 @@
   export default {
     name: 'SlickSlider',
     components: { VueSlickCarousel },
-    // props:{
-    //     sliderImgs:[
-    //       'img1',
-    //       'img2',
-    //       'img3',
-    //       'img4',
-    //       'img5',
-    //       'img6',
-    //       'img7',
-    //       'img8'
-    //     ]
-    //   },
+    props:{
+        sliderImgs:Array
+      },
     data(){
       return{
       settings:{
@@ -52,6 +35,6 @@
   margin-top:80px;
   margin-left: 40px;
   max-width: 610px;
-
 }
+
 </style>

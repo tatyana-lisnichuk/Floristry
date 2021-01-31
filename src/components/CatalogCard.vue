@@ -16,7 +16,7 @@
         <div class="card-title">
           {{cardTitle}}
         </div>
-        <a href="#" class="catalog-link-button">смотреть работы</a>
+        <a :href="catalogCardLink" class="catalog-link-button">смотреть работы</a>
       </div>
     </div>
   </div>
@@ -29,11 +29,15 @@ export default{
   props:{
         cardTitle:String,
         cardNumber:String,
-        cardImg:String
+        cardImg:String,
+        cardLink:String
       },
       computed: {
     catalogCardImg() {
       return './assets/imgs/catalog/' + this.cardImg
+    },
+    catalogCardLink(){
+      return '/service-page-' + this.cardLink
     }
   }
 }

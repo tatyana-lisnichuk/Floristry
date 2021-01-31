@@ -53,7 +53,7 @@
     top: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 800;
+    z-index: 500;
     padding: 3rem 20px 2rem 20px;
 
 }

@@ -4,7 +4,11 @@
        <Header class="container"></Header>
         <div class="main__description">
           <div class="main__title">флористика с душой</div>
-          <DarkButton buttonName="Смотреть работы"></DarkButton>
+          <!-- grey button -->
+          <div>
+            <a href="/all-works" class="dark-btn">Смотреть работы</a>
+          </div>
+
         </div> 
         <div class="container main__footer">
           <SocialList></SocialList>
@@ -18,14 +22,14 @@
            
          <CatalogTitle></CatalogTitle>
         <div class="catalog__grid">
-          <CatalogCard cardTitle="букет невесты и свадебное оформление" cardNumber="01" cardImg='catalog-img1.jpg'></CatalogCard>
-          <CatalogCard cardTitle="букеты на торжества" cardNumber="02" cardImg='catalog-img2.jpg'></CatalogCard>
-          <CatalogCard cardTitle="композиции" cardNumber="03" cardImg='catalog-img3.jpg'></CatalogCard>
-          <CatalogCard cardTitle="оформление мероприятий" cardNumber="04" cardImg='catalog-img4.jpg'></CatalogCard>
+          <CatalogCard cardTitle="букет невесты и свадебное оформление" cardNumber="01" cardImg='catalog-img1.jpg' cardLink='wedding'></CatalogCard>
+          <CatalogCard cardTitle="букеты на торжества" cardNumber="02" cardImg='catalog-img2.jpg' cardLink='bouquet'></CatalogCard>
+          <CatalogCard cardTitle="композиции" cardNumber="03" cardImg='catalog-img3.jpg' cardLink='compositions'></CatalogCard>
+          <CatalogCard cardTitle="оформление мероприятий" cardNumber="04" cardImg='catalog-img4.jpg' cardLink='decoration'></CatalogCard>
         </div>
       </section>
 
-      <section class="sales">
+      <section class="sales" id="sales">
         <div class="sales__grid">
           <div class="sales__item-1-3">
             <div class="sales__item-1-3-content">
@@ -35,7 +39,16 @@
                 При заказе свадебного оформления предоставляется скидка на
                 букет невесты и бутоньерку в размере 30%
               </div>
-              <BlackButton buttonName="заказать оформление"></BlackButton>
+              <!-- black button -->
+              <div v-on:click="showModal">
+                <a href="#sales" class="black-btn">заказать оформление</a>
+              </div>
+              <!-- modal window -->
+              <ModalWindow
+                v-if="isModalVisible"
+                @closeModal="closeModal"
+                >
+              </ModalWindow>
             </div>
           </div>
           <div class="sales__item-2-3">
@@ -55,11 +68,11 @@
       <section class="footer">
         <div class="footer-line"></div>
         <div class="footer-grid">
-          <a href="#" class="footer-grid-item">Cвадебная флористика</a>
-          <a href="#" class="footer-grid-item">Букеты на любые мероприятия</a>
-          <a href="#" class="footer-grid-item">Букеты невесты</a>
-          <a href="#" class="footer-grid-item">Композиции</a>
-          <a href="#" class="footer-grid-item">Оформление мероприятий</a>
+          <a href="/service-page-wedding" class="footer-grid-item">Cвадебная флористика</a>
+          <a href="/service-page-bouquet" class="footer-grid-item">Букеты на любые мероприятия</a>
+          <a href="/service-page-wedding" class="footer-grid-item">Букеты невесты</a>
+          <a href="/service-page-compositions" class="footer-grid-item">Композиции</a>
+          <a href="/service-page-decoration" class="footer-grid-item">Оформление мероприятий</a>
         </div>
         <div>
           <SocialList class="footer-socials-list"></SocialList>
@@ -70,34 +83,41 @@
 
 <script>
 
-import DarkButton from '@/components/DarkButton';
 import SocialList from '@/components/SocialList';
 import Scroll from '@/components/Scroll';
 import ShowCatalog from '@/components/ShowCatalog';
 import CatalogTitle from '@/components/CatalogTitle';
 import CatalogCard from '@/components/CatalogCard';
-import BlackButton from '@/components/BlackButton';
+import ModalWindow from '@/components/ModalWindow';
+
 import Header from '@/components/Header';
 
 export default{
   name: 'MainPage',
   components:{
-    DarkButton,
     SocialList,
     Scroll,
     ShowCatalog,
     CatalogTitle,
     CatalogCard,
-    BlackButton,
+    ModalWindow,
     Header
     },
 
  data(){
     return{
+      isModalVisible:false
+    }
+    },
+    methods:{
+    showModal(){
+      this.isModalVisible = true;
 
+    },
+    closeModal(){
+      this.isModalVisible = false;
     }
     }
- 
  }
 
 </script>
@@ -122,13 +142,11 @@ export default{
 .main {
   min-height: 1020px;
   margin-bottom:0;
-  background: url(../../public/assets/imgs/hero-img.jpg) no-repeat;
-  /* background-size: cover; */
+  background: url(/assets/imgs/hero-img.jpg) no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
 
 .main__description {
   display: flex;

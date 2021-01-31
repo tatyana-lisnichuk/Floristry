@@ -2,7 +2,6 @@
 <div id="burger"
 :class="{ 'active' : isBurgerActive }"
 @click.prevent="toggle">
-<slot>
   <div class="burger-wrapper">
     <button type="button" class="burger-button" title="Menu">
         <span class="burger-bar burger-bar--1"></span>
@@ -11,7 +10,6 @@
     </button>
     <span class="menuName">Меню</span>
   </div>
-</slot>
 </div>
 </template>
 
@@ -32,6 +30,7 @@ computed: {
 }
 </script>
 <style>
+
 .menuName{
   font-size: 1.25rem;
    line-height: 1.4rem;
@@ -41,6 +40,7 @@ computed: {
   margin-left: 2rem;
   position:absolute;
   top:3px;
+  cursor: pointer;
 }
 .hidden {
   visibility: hidden;
@@ -50,27 +50,23 @@ button {
 }
 .burger-wrapper{
   position:fixed;
- max-width: 8rem;
-
   z-index: 999;
+    margin-left: -1rem;
 }
-/* remove blue outline */
 button:focus {
   outline: 0;
 }
 
 .burger-button {
   position: relative;
-  height: 30px;
+  height: 32px;
   width: 32px;
   display: block;
   z-index: 999;
   border: 0;
   border-radius: 0;
   background-color: transparent;
-  pointer-events: all;
   transition: transform .6s cubic-bezier(.165,.84,.44,1);
-  
 }
 .burger-bar {
   background-color: #fff;
@@ -81,8 +77,6 @@ button:focus {
   height: 1px;
   width: 23px;
   margin-top: -5px;
-  /* transition: transform .6s cubic-bezier(.165,.84,.44,1),opacity .3s cubic-bezier(.165,.84,.44,1),background-color .6s cubic-bezier(.165,.84,.44,1); */
-  
 }
 
 .burger-bar--1 {
@@ -123,5 +117,60 @@ button:focus {
 
 #burger.active .burger-bar--3 {
   transform: rotate(-45deg)
+}
+
+@media screen and (max-width: 764px){
+  .burger-wrapper{
+    margin-left: -1rem;
+  }
+  .menuName{
+    font-size: 1.25rem;
+    line-height: 1.4rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color:white;
+    margin-left: 2rem;
+    position:absolute;
+    top:3px;
+    cursor: pointer;
+  }
+  .hidden {
+    visibility: hidden;
+  }
+  button {
+    cursor: pointer;
+  }
+  .burger-wrapper{
+    position:fixed;
+    z-index: 999;
+
+  }
+
+  button:focus {
+    outline: 0;
+  }
+
+  .burger-button {
+    position: relative;
+    height: 32px;
+    width: 32px;
+    display: block;
+    z-index: 999;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    transition: transform .6s cubic-bezier(.165,.84,.44,1);
+    
+  }
+  .burger-bar {
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    left: 6px;
+    height: 1px;
+    width: 23px;
+    margin-top: -5px;
+  }
 }
 </style>

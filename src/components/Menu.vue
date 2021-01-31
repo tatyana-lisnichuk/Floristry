@@ -77,7 +77,6 @@ ul.sidebar-panel-nav > li > a {
  .menuSocialList{
   color: rgba(255, 255, 255, 0.5);
   position: absolute;
-
   left:95px;
   bottom:95px;
  }
