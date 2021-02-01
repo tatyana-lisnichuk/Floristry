@@ -14,8 +14,6 @@ export default{
 <style>
 .catalog__title {
   align-items: center;
-  
-  /* margin-top: 40px; */
   margin:0 auto;
 }
 .catalog__titleName {
@@ -40,5 +38,41 @@ export default{
   text-transform: uppercase;
   opacity: 0.03;
   position: relative;
+  margin: 0 -40px;
+}
+@media screen and (max-width: 1715px){
+  .catalog__bcgTitle{
+    font-size: 200px;
+  }
+}
+@media screen and (max-width: 1560px){
+  .catalog__bcgTitle{
+    font-size: 180px;
+  }
+}
+@media screen and (max-width: 1410px){
+  .catalog__bcgTitle{
+    font-size: 160px;
+  }
+}
+@media screen and (max-width: 1260px){
+  .catalog__bcgTitle{
+    font-size: 140px;
+  }
+}
+@media screen and (max-width: 1110px){
+.catalog__bcgTitle{
+    font-size: 120px;
+  }
+}
+@media screen and (max-width: 960px){
+.catalog__bcgTitle{
+    font-size: 90px;
+  }
+}
+@media screen and (max-width: 768px){
+.catalog__bcgTitle{
+    display:none;
+  }
 }
 </style>

@@ -26,11 +26,18 @@ export default{
   gap:1.7rem;
 }
 .fab{
-  /* color:white; */
   font-size: 1.7rem;
 }
 .fab:hover{
   opacity: 0.6;
 }
 
+@media screen and (max-width: 768px){
+  .socials-list {
+  /* display: flex; */
+  margin: auto;
+  flex-direction: row;
+  gap:80px;
+}
+}
 </style>

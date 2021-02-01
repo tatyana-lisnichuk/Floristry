@@ -139,4 +139,18 @@ export default{
 .catalog__card :hover .catalog-link-button {
   display: block;
 }
+@media screen and (max-width: 1110px){
+.catalog__card {
+  width:330px;
+}
+}
+@media screen and (max-width: 960px){
+
+}
+@media screen and (max-width: 768px){
+  .catalog__card {
+    width:310px;
+    min-height: 60px;
+  }
+}
 </style>

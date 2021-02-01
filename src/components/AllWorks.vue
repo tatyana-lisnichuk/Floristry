@@ -9,7 +9,7 @@
         </div>
     </VueSlickCarousel>
     </div>
-
+    <FlikrData></FlikrData>
       <section class="footer">
         <div class="footer-line"></div>
         <div class="footer-grid">
@@ -23,7 +23,7 @@
           <SocialList class="footer-socials-list"></SocialList>
         </div>
       </section>
-    <VueInstagram></VueInstagram>
+    
   </div>
   
 </template>
@@ -33,7 +33,9 @@
   import 'vue-slick-carousel/dist/vue-slick-carousel.css'
   // // optional style for arrows & dots
   import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+  import FlikrData from "@/components/FlikrData";
   import Header from "@/components/Header";
+   import SocialList from "@/components/SocialList";
 
   
 
@@ -42,7 +44,8 @@
     components: { 
         VueSlickCarousel,
         Header,
-        // VueInstagram
+        SocialList,
+        FlikrData
         },
     props:{
      
@@ -58,47 +61,36 @@
         
       },
       allWorksData:[
-      {img:'1.jpg'},
-          {img: '2.jpg' },
-          {img: '3.jpg' },
-          {img: '4.jpg' },
-          {img: '5.jpg' },
-          {img: '6.jpg' },
-          {img:'7.jpg'},
-           {img:'2-1.jpg'},
-          {img: '2-2.jpg' },
-          {img: '2-3.jpg' },
-          {img: '2-4.jpg' },
-          {img: '2-5.jpg' },
-          {img: '2-6.jpg' },
-           {img: '2-7.jpg' },
-           {img: '2-8.jpg'},
-           {img:'4-1.jpg'},
-          {img: '4-2.jpg' },
-          {img: '4-3.jpg' },
-          {img: '4-4.jpg' },
-          {img: '4-5.jpg' },
-          {img: '4-6.jpg' },
-          {img: '4-7.jpg' },
-          {img:'4-8.jpg'}
+          {img:'service-page1-main-img.jpg'},
+          {img:'service-page2-main-img.jpg'},
+          {img:'service-page3-main-img.jpg'},
+          {img:'service-page4-main-img.jpg'},
+          
+          // {img: '6.jpg' },
+          // {img:'7.jpg'},
+          //  {img:'2-1.jpg'},
+          // {img: '2-2.jpg' },
+          // {img: '2-3.jpg' },
+          // {img: '2-4.jpg' },
+          // {img: '2-5.jpg' },
+          // {img: '2-6.jpg' },
+          //  {img: '2-7.jpg' },
+          //  {img: '2-8.jpg'},
+          //  {img:'4-1.jpg'},
+          // {img: '4-2.jpg' },
+          // {img: '4-3.jpg' },
+          // {img: '4-4.jpg' },
+          // {img: '4-5.jpg' },
+          // {img: '4-6.jpg' },
+          // {img: '4-7.jpg' },
+          // {img:'4-8.jpg'}
       ],
       // info: null,
       // loading: true,
       // errored: false
       }
     },
-    // mounted () {
-    // fetch
-    //   .get('https://api.unsplash.com/photos/?client_id=d0ebc52e406b1ac89f78ab30e1f6112338d663ef349501d65fb2f380e4987e9e')
-    //   .then(response => {
-    //     this.info = response.data
-    //   })
-      // .catch(error => {
-      //   console.log(error)
-      //   this.errored = true
-      // })
-      // .finally(() => this.loading = false)
-  // }
+
   }
 </script>
 <style>

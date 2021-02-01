@@ -1,6 +1,6 @@
 <template>
 <div class="logo">
-  <a href="#main-page">
+  <a href="/">
     <img  class="logo__img" src="../../public/assets/imgs/svg/Logo.svg" alt="logo">
   </a>
 </div>
@@ -20,5 +20,11 @@ export default{
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+@media screen and (max-width: 450px){
+.logo {
+  width: 6.2rem;
+  height: 1.9rem;
+}
 }
 </style>

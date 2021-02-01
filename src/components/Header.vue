@@ -19,13 +19,14 @@ export default {
 </script>
 
 <style>
-/* .main-header-wrapper{
-  background-color: blue;
-} */
 .main-header {
-   padding-top:100px;
+  padding-top:100px;
   display: flex;
   justify-content: space-between;
-  /* margin-top: 100px; */
+}
+@media screen and (max-width: 768px){
+.main-header {
+  padding-top:40px;
+}
 }
 </style>

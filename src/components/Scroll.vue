@@ -22,5 +22,9 @@ export default{
   position: absolute;
   bottom: 0;
 }
-
+@media screen and (max-width: 768px){
+  .scroll {
+    display: none;
+    }
+}
 </style>

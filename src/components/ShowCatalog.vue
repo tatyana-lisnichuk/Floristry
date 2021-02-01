@@ -1,7 +1,7 @@
 <template>
 <div class="showCatalog">
   <div class="showCatalog__innerWrapper">
-    <div class="showCatalog__text"><a href="#catalog">смотреть каталог <i class="fas fa-arrow-right"></i></a></div>
+    <div class="showCatalog__text"><a id="showCatalog" href="#catalog">смотреть каталог <i class="fas fa-arrow-right"></i></a></div>
   </div>
 </div>
 </template>
@@ -47,4 +47,18 @@ margin-left:-5rem;
   right: 0;
   bottom: 0;
 }
+#showCatalog{
+  text-decoration:none;
+  color: white;
+}
+#showCatalog:hover{
+  text-decoration:none;
+  color: white;
+}
+@media screen and (max-width: 768px){
+  .showCatalog {
+    display: none;
+    }
+}
+
 </style>

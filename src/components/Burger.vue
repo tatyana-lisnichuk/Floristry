@@ -8,8 +8,8 @@
         <span class="burger-bar burger-bar--2"></span>
         <span class="burger-bar burger-bar--3"></span>
     </button>
-    <span class="menuName">Меню</span>
   </div>
+  <span class="menuName">Меню</span>
 </div>
 </template>
 
@@ -33,30 +33,31 @@ computed: {
 
 .menuName{
   font-size: 1.25rem;
-   line-height: 1.4rem;
+  line-height: 1.4rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color:white;
-  margin-left: 2rem;
+  margin-left: 1.2rem;
   position:absolute;
-  top:3px;
+  top:108px;
   cursor: pointer;
-}
-.hidden {
-  visibility: hidden;
 }
 button {
   cursor: pointer;
 }
+.burger{
+  position: relative;
+}
 .burger-wrapper{
-  position:fixed;
+  position: fixed;
+  position:absolute;
+  
   z-index: 999;
-    margin-left: -1rem;
+  margin-left: -1rem;
 }
 button:focus {
   outline: 0;
 }
-
 .burger-button {
   position: relative;
   height: 32px;
@@ -119,58 +120,12 @@ button:focus {
   transform: rotate(-45deg)
 }
 
-@media screen and (max-width: 764px){
+@media screen and (max-width: 768px){
   .burger-wrapper{
-    margin-left: -1rem;
+    margin-left: 0rem;
   }
-  .menuName{
-    font-size: 1.25rem;
-    line-height: 1.4rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color:white;
-    margin-left: 2rem;
-    position:absolute;
-    top:3px;
-    cursor: pointer;
-  }
-  .hidden {
-    visibility: hidden;
-  }
-  button {
-    cursor: pointer;
-  }
-  .burger-wrapper{
-    position:fixed;
-    z-index: 999;
-
-  }
-
-  button:focus {
-    outline: 0;
-  }
-
-  .burger-button {
-    position: relative;
-    height: 32px;
-    width: 32px;
-    display: block;
-    z-index: 999;
-    border: 0;
-    border-radius: 0;
-    background-color: transparent;
-    transition: transform .6s cubic-bezier(.165,.84,.44,1);
-    
-  }
-  .burger-bar {
-    background-color: #fff;
-    position: absolute;
-    top: 50%;
-    right: 6px;
-    left: 6px;
-    height: 1px;
-    width: 23px;
-    margin-top: -5px;
+ .menuName{
+  display: none;
   }
 }
 </style>

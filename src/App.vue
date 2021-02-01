@@ -34,8 +34,14 @@ export default {
 }
 a{
   text-decoration:none;
-  color: inherit;
+
+  color: white;
 }
+a:hover{
+  text-decoration:none;
+  color: white;
+}
+
 img{
   width: 100%;
   height: 100%;
@@ -48,15 +54,17 @@ li{
 input{
   outline: none;
 }
-
-.container {
+.fab, i {
+  color:white;
+}
+.wrap-container {
   max-width:1720px;
-  padding: 0 50px;
+  padding: 0 60px;
   width:100%;
   margin: 0 auto;
 }
 
-/* buttons style */
+/* buttons styles */
 .brown-btn-wrapper{
   padding:15px 0;
 }

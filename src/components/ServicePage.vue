@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper service-page__main service-page" id="service-page">
-    <Header class="service-page__header container"></Header>
+    <Header class="service-page__header wrap-container"></Header>
 
     <div
       class="service-page__left"
@@ -81,6 +81,7 @@ export default {
 .service-page__main {
   position: relative;
   min-height: 1080px;
+  background-color: #3b181e;
 }
 
 .service-page h2 {
@@ -126,7 +127,7 @@ export default {
 .service-page__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: covegitr;
 }
 .service-page__text {
   max-width: 565px;
