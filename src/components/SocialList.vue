@@ -23,7 +23,8 @@ export default{
 .socials-list {
   display: flex;
   flex-direction: column;
-  gap:1.7rem;
+  /* gap:1.7rem; */
+
 }
 .fab{
   font-size: 1.7rem;
@@ -31,13 +32,33 @@ export default{
 .fab:hover{
   opacity: 0.6;
 }
-
+.social{
+  margin: 1rem 1rem;
+}
 @media screen and (max-width: 768px){
   .socials-list {
-  /* display: flex; */
   margin: auto;
   flex-direction: row;
-  gap:80px;
+  /* gap:60px; */
+}
+.socials-list .social {
+  background-color: #3b181e;
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 50%;
+  /* text-align: center; */
+  /* display: inline-block; */
+  padding:0.45rem;
+}
+}
+@media screen and (max-width: 550px){
+  .socials-list {
+  /* gap:50px; */
+}
+}
+@media screen and (max-width: 420px){
+  .socials-list {
+  /* gap:40px; */
 }
 }
 </style>

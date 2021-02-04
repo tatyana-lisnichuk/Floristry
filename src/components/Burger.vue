@@ -20,6 +20,7 @@ export default{
 computed: {
     isBurgerActive() {
         return store.isNavOpen
+        // store.isFixed
     }
 },
   methods: {
@@ -46,13 +47,12 @@ button {
   cursor: pointer;
 }
 .burger{
-  position: relative;
+  position: fixed;
 }
 .burger-wrapper{
-  position: fixed;
+  /* position: fixed; */
   position:absolute;
-  
-  z-index: 999;
+  z-index: 1001;
   margin-left: -1rem;
 }
 button:focus {
@@ -119,7 +119,11 @@ button:focus {
 #burger.active .burger-bar--3 {
   transform: rotate(-45deg)
 }
-
+@media screen and (max-width:1050px){
+  .menuName{
+  top:50px;
+}
+}
 @media screen and (max-width: 768px){
   .burger-wrapper{
     margin-left: 0rem;

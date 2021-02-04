@@ -1,27 +1,28 @@
 <template>
-  <div>
+  <div class="flikr-data">
       <button class="brown-btn" @click="search">Смотреть еще работы</button>
       <ul class="more-works" id="more-works" >
-      <!-- <li v-for="image in images" :key="image.id">{{image}}</li> -->
-      <li class="more-works__item" v-for="image in images" :key="image.id">
-        <img class="more-woks__img" :src="image.url_n" :alt="image.title">
-        <div>
-        </div>
-      </li>
+        <ImageFlikrCard
+        v-for="image in images"
+        :key="image.id"
+        :image="image"
+        ></ImageFlikrCard>
     </ul>
   </div>
 </template>
 
 <script>
 
- import config from '../../config';
 import axios from 'axios';
+import ImageFlikrCard from "@/components/ImageFlikrCard"
 export default {
 name: "FlikrData",
+components:{
+  ImageFlikrCard
+},
   data () {
     return {
     // loading: false,
-      // tag: '',
       images: []
     }
   },
@@ -41,22 +42,23 @@ name: "FlikrData",
         url: 'https://api.flickr.com/services/rest',
         params: {
           method: 'flickr.photos.search',
-          // method: 'flickr.photos.setTags',
-          api_key: config.apiKey,
-          // tags: this.tag,
-          tags:"bouquets",
-          // extras: 'url_n, owner_name, date_taken, views',
+          api_key: '7b795fb92875bd8c213bccaf59304dcc',
+          tags:"bouquets , flower , floristry",
           extras: 'url_n',
           page: 1,
           format: 'json',
           nojsoncallback: 1,
-          per_page: 30,
+          per_page: 42,
         }
       })
     },
-    mounted(){
-      this.search()
-    }
+
+    //убрать изображения, которые не имеют url_n (не отображаются)
+computed: {
+  cleanImages() {
+    return this.images.filter(image => image.url_n)
+  }
+},
   }
 }
 // )
@@ -66,23 +68,12 @@ name: "FlikrData",
   display: flex;
   flex-wrap: wrap;
   gap:10px;
-  margin: auto;
   justify-content: center;
   align-items:center;
 }
-li .more-works__item{
- width: 320px;
- /* width: calc(33% - 1rem); */
-  /* height:400px; */
-  /* border-radius: 3px; */
-  width:100%;
-  border-radius: 5px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, .15);
- 
-}
-img .more-works__img{
-  width: 100%;
-  object-fit: cover;
-  border-radius: 5px 5px 0 0;
+.flikr-data .brown-btn{
+  margin:40px 0;
+z-index: 125;
+
 }
 </style>

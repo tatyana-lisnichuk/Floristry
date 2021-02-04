@@ -24,9 +24,15 @@ export default {
   display: flex;
   justify-content: space-between;
 }
+@media screen and (max-width: 1050px){
+.main-header {
+  padding-top:40px;
+  margin-bottom:30px;
+  }
+}
 @media screen and (max-width: 768px){
 .main-header {
   padding-top:40px;
-}
+  }
 }
 </style>

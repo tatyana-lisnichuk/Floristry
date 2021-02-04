@@ -1,5 +1,5 @@
 <template>
-  <div class="modal">
+  <div class="modal-window">
    <div class="modal__mask">
      <div class="modal__inner-wrapper">
        <div class="modal__container">
@@ -8,7 +8,6 @@
           <span><i class="fas fa-times close-modal"
             @click="closeModal"></i></span>
           <form method="get" action="#" class="modal__form">
-            
             <label class="modal__title">оставьте свой номер и мы вам перезвоним!</label>
             <div>
               <input class="modal__input" type="text" placeholder="Имя" name="name">
@@ -16,11 +15,9 @@
             <div>
               <input class="modal__input" type="tel" placeholder="Телефон" name="phone">
             </div>
-            
             <input class="modal__submit-btn" type="submit" value="позвоните мне">
           </form>
         </div>
-          
         </div>
       </div>
    </div>
@@ -46,7 +43,7 @@ methods:{
 
 <style>
 
-.modal__title {
+label.modal__title {
   font-size: 20px;
   line-height: 32px;
   letter-spacing: 0.09em;
@@ -70,7 +67,6 @@ methods:{
  display: table-cell;
   vertical-align: middle;
 }
-
 .modal__container {
   max-width: 716px;
   min-height: 444px;
@@ -87,12 +83,11 @@ methods:{
   background-image: url("/assets/imgs/form-img.jpg");
   background-repeat: no-repeat;
 }
-
 .modal__right{
-   padding:22px 0;
+   padding:10px 0;
    margin: 0 auto;
 }
-.modal__submit-btn{
+input.modal__submit-btn{
   padding: 1rem;
   width: 100%;
   background-color: #fff;
@@ -103,23 +98,23 @@ methods:{
   cursor:pointer;
 margin: 1.5rem 0 0 0;
 }
-.close-modal{
+.fas.fa-times.close-modal{
   font-size: 22px;
   float: right;
   margin-right: -2rem;
+  margin-top: 2rem;
  cursor: pointer;
 }
-.modal__form{
+form.modal__form{
  max-width: 250px;
  width: 100%;
   margin-top:60px;
    margin-bottom:40px;
 }
-
-.modal__input::placeholder{
+input.modal__input::placeholder{
   color:#fff;
 }
-.modal__input{
+input.modal__input{
 padding:1rem 1.5rem;
 width: 100%;
 margin:0.5rem 0;
@@ -129,7 +124,7 @@ margin:0.5rem 0;
 
 @media screen and (max-width: 670px){
 
-.modal__title {
+label.modal__title {
   letter-spacing: 0.13em;
   padding: 0 25px;
   margin:0 35px;
@@ -141,18 +136,14 @@ margin:0.5rem 0;
 .modal__left{
   display: none;
 }
-
 .modal__right{
    padding:44px;
 }
-
-.close-modal{
+.fas.fa-times.close-modal{
   margin-right: 0;
 }
-.modal__form{
+form.modal__form{
  max-width: 370px;
 }
-};
-  
-
+}
 </style>

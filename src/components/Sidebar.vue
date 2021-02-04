@@ -41,7 +41,7 @@ transition: transform 0.2s ease;
     top: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 500;
+    z-index: 1000;
     padding: 3rem 20px 2rem 20px;
 }
 </style>

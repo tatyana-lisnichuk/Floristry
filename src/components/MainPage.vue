@@ -1,5 +1,6 @@
 <template>
- <div class="site-wrapper">
+ <div class="site-wrapper"
+ :class="{ 'fixed' : isPageFixed}">
       <section class="main" id="main-page">
        <Header class="wrap-container"></Header>
         <div class="main__description">
@@ -17,9 +18,7 @@
         </div>
         <div class="main__gradient"></div>
       </section>
-
       <section class="catalog wrap-container" id="catalog">
-           
          <CatalogTitle></CatalogTitle>
         <div class="catalog__grid">
           <CatalogCard cardTitle="букет невесты и свадебное оформление" cardNumber="01" cardImg='catalog-img1.jpg' cardLink='wedding'></CatalogCard>
@@ -29,7 +28,7 @@
         </div>
       </section>
     <BootstrapSlider></BootstrapSlider>
-      <section class="sales" id="sales">
+      <section class="sales wrap-container" id="sales">
         <div class="sales__grid">
           <div class="sales__item-1-3">
             <div class="sales__item-1-3-content">
@@ -64,27 +63,14 @@
           </div>
         </div>
       </section>
-      
-      <section class="footer">
-        <div class="footer-line"></div>
-        <div class="footer-grid">
-          <a href="/service-page-wedding" class="footer-grid-item">Cвадебная флористика</a>
-          <a href="/service-page-bouquet" class="footer-grid-item">Букеты на любые мероприятия</a>
-          <a href="/service-page-wedding" class="footer-grid-item">Букеты невесты</a>
-          <a href="/service-page-compositions" class="footer-grid-item">Композиции</a>
-          <a href="/service-page-decoration" class="footer-grid-item">Оформление мероприятий</a>
-        </div>
-        <div>
-          <SocialList class="footer-socials-list"></SocialList>
-        </div>
-      </section>
-      
+      <Footer></Footer> 
     </div>
+  
 </template>
 
 <script>
-
 import SocialList from '@/components/SocialList';
+import Footer from '@/components/Footer';
 import Scroll from '@/components/Scroll';
 import ShowCatalog from '@/components/ShowCatalog';
 import CatalogTitle from '@/components/CatalogTitle';
@@ -93,17 +79,19 @@ import ModalWindow from '@/components/ModalWindow';
 import BootstrapSlider from '@/components/BootstrapSlider';
 import Header from '@/components/Header';
 
+import { store } from '@/store.js';
 export default{
   name: 'MainPage',
   components:{
-    SocialList,
+    Footer,
     Scroll,
     ShowCatalog,
     CatalogTitle,
     CatalogCard,
     ModalWindow,
     Header,
-    BootstrapSlider
+    BootstrapSlider,
+    SocialList
     },
 
  data(){
@@ -118,7 +106,13 @@ export default{
     },
     closeModal(){
       this.isModalVisible = false;
-    }
+    },
+
+    },
+    computed: {
+      isPageFixed() {
+          return store.isNavOpen
+      }
     }
  }
 
@@ -126,13 +120,7 @@ export default{
 
 <style>
 
-.site-wrapper {
-  margin: 0 auto;
-  max-width: 1920px;
-  width:100vw;
-  background: #3b181e;
-  padding-bottom:50px;
-}
+
 
 .main {
   min-height: 1020px;
@@ -174,7 +162,6 @@ export default{
 
 .main__gradient {
   min-height: 100px;
-  /* height: 100%; */
   background: linear-gradient(0deg, #3b181e 3.33%, rgba(59, 24, 30, 0) 100%);
   width: 100%;
 }
@@ -192,17 +179,12 @@ export default{
   margin-top: -110px;
   display: flex;
   gap:50px;
-  /* flex-wrap: wrap; */
-  
 }
 
 .sales__grid {
-  margin: 60px;
-  padding: 30px;
   display: flex;
   max-width: 1220px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
 }
 .sales__item-1-3 {
   margin: 10px;
@@ -220,7 +202,6 @@ export default{
 .sales__item-1-3-content {
   text-align:left;
 }
-
 .sales__item-2-3-content {
   display: flex;
   flex-direction: column;
@@ -237,41 +218,19 @@ export default{
 .sales__line {
   margin: 15px auto 25px 0;
   width: 86px;
+  background-color: #fff;
 }
 .sales__text {
   max-width: 352px;
   margin-bottom: 52px;
 }
-
 .sales__image {
   max-width: 697px;
   height: 100%;
   object-fit: cover;
   text-align: center;
 }
-.footer-line {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  max-width: 1816px;
-  margin: 21px 52px;
-}
-.footer-grid
-{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.footer-socials-list{
-  flex-direction: row;
-  justify-content: center;
- 
-} 
-.footer-grid-item {
-  color: rgba(255, 255, 255, 0.5);
-  margin: 25px;
-}
-.footer-social {
-  margin: 25px;
-} 
+
 @media screen and (max-width: 1500px){
 .catalog__grid {
   gap:5px;
@@ -293,10 +252,13 @@ export default{
     font-size: 110px;
   }
 }
-@media screen and (max-width: 1260px){
-  .main__title{
-    /* font-size: 140px; */
-  }
+@media screen and (max-width: 1200px){
+.catalog__grid {
+/* display: flex; */
+  gap:10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 }
 @media screen and (max-width: 1110px){
 .main__title{
@@ -304,14 +266,7 @@ export default{
     padding-left: 20px;
     padding-right: 20px;
   }
-.catalog__grid {
-  margin-top: 30px;
-  /* display: flex; */
-  gap:10px;
-  flex-wrap: wrap;
-  justify-content: center;
-  
-}
+
 }
 @media screen and (max-width: 960px){
 .main__title{
@@ -324,142 +279,99 @@ export default{
 } 
 @media screen and (max-width: 768px){
   .main {
-  min-height: 1020px;
-  /* margin-bottom:0; */
   background: url("/assets/imgs/response/response-main.jpg") no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
 }
-/* 
-.main__description {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: 30px 0px;
-  min-height: 400px;
-  justify-content: space-between;
-} */
-
-.main__title {
-  font-size: 70px;
-  /* line-height: 77px; */
-  /* letter-spacing: 0.09em; */
-  max-width: 570px;
-  /* text-align: center;
-  padding-left: 50px;
-  padding-right: 50px;
-  text-transform: uppercase; */
-}
-
-.main__footer{
-  /* width: 100%; */
-  margin-top: 0px;
-  margin-bottom: 50px;
-  /* display: flex; */
-  /* justify-content: space-between; */
-}
-
-.main__gradient {
-  display: none;
-}
-
-.catalog {
-  /* margin-top: 50px; */
-  margin-bottom: 0px;
-  min-height: 100%;
-  padding-top: 0px;
-  padding-bottom:0px;
-  /* border-color: #3b181e; */
-}
-
-.catalog__grid { 
-  /* margin-top: 30px;  */
-  /* display: flex; */
-  gap:5px;
-  /* flex-wrap: wrap; */
-  
+  .main__title {
+    font-size: 70px;
+    max-width: 570px;
+  }
+  .main__footer{
+    margin-top: 0px;
+    margin-bottom: 50px;
+  }
+  .main__gradient {
+    display: none;
+  }
+  .catalog {
+    min-height: 100%;
+    padding-top: 0px;
+    padding-bottom:0px;
+  }
+  .sales__grid {
+    margin: auto;
+    align-items:center;
+  flex-direction:column;
+  position: relative;
+  max-width: 453px;
+  min-height:560px ;
+  }
+  .sales__item-2-3 {
+    width: 100%;
+    height: 323px;
+    margin-top: 2rem;
+  }
+  .sales__item-1-3 {
+    width: 100%;
+    position: absolute;
+    top:310px;
+  }
+  .sales__item-1-3-content {
+    text-align:center;
+  }
+  .sales__title {
+    width: 100%;
+    text-align: center;
+  }
+  .sales__line {
+    margin: 20px auto;
+  }
+  .sales__text {
+    max-width: 352px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+.catalog__grid{
+    display: none;
+  }
 } 
-
-.sales__grid {
-  margin: 0px;
-  padding: 30px;
-  display: flex;
-  /* width: 100%; */
-  /* margin-left: auto;
-  margin-right: auto; */
-}
-.sales__item-1-3 {
-  margin: 10px;
-  width: calc(100% / 3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.sales__item-2-3 {
-  width: calc(100% / 3 * 2);
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-}
-.sales__item-1-3-content {
-  text-align:left;
+.fixed{
+  position: fixed;
 }
 
-.sales__item-2-3-content {
-  display: flex;
-  flex-direction: column;
+@media screen and (max-width: 550px){
+  .main__title {
+  font-size: 50px;
+  max-width: 100%;
+  }
+  .sales__item-2-3 {
+    margin-top: 1rem;
+  }
+  .sales__item-1-3 {
+    top:250px;
+  }
+
+  .main__title {
+    font-size: 40px;
+  line-height: 42px;
+  letter-spacing: 9%;
+  
+  }
+  .main__description {
   justify-content: center;
-  align-items: center;
-   
+  gap:35px;
+  }
+  .main{
+  min-height: 700px;
+  }
 }
-.sales__title {
+
+@media screen and (max-width: 320px){
+  .main__title {
   font-size: 30px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  width: 220px;
-}
-.sales__line {
-  margin: 15px auto 25px 0;
-  width: 86px;
-}
-.sales__text {
-  max-width: 352px;
-  margin-bottom: 52px;
-}
 
-.sales__image {
-  max-width: 697px;
-  height: 100%;
-  object-fit: cover;
-  text-align: center;
+  }
 }
-.footer-line {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  max-width: 1816px;
-  margin: 21px 52px;
-}
-.footer-grid
-{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.footer-socials-list{
-  flex-direction: row;
-  justify-content: center;
- 
-} 
-.footer-grid-item {
-  color: rgba(255, 255, 255, 0.5);
-  margin: 25px;
-}
-.footer-social {
-  margin: 25px;
-} 
-} 
-
 </style>

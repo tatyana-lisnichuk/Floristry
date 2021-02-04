@@ -1,53 +1,48 @@
 <template>
-<div class="catalog__card">
-  <div class="catalog__cardBorders">
-    <div class="catalog__cardBcg">
-      <div class="card-hover-background"></div>
-      <img
-        :src="catalogCardImg"
-        alt="flowers"
-        class="background-image"
-      /> 
-      <div class="card-content">
-        <div class="card-header">
-          <div class="header-number">{{cardNumber}}</div>
-          <div class="header-line"></div>
+  <div class="catalog__card">
+    <div class="catalog__cardBorders">
+      <div class="catalog__cardBcg">
+        <div class="card-hover-background"></div>
+        <img :src="catalogCardImg" alt="flowers" class="background-image" />
+        <div class="card-content">
+          <div class="card-header">
+            <div class="header-number">{{ cardNumber }}</div>
+            <div class="header-line"></div>
+          </div>
+          <div class="card-title">
+            {{ cardTitle }}
+          </div>
+          <a :href="catalogCardLink" class="catalog-link-button"
+            >смотреть работы</a
+          >
         </div>
-        <div class="card-title">
-          {{cardTitle}}
-        </div>
-        <a :href="catalogCardLink" class="catalog-link-button">смотреть работы</a>
       </div>
     </div>
   </div>
-</div>
-
 </template>
 <script>
-export default{
-  name: 'CatalogCard',
-  props:{
-        cardTitle:String,
-        cardNumber:String,
-        cardImg:String,
-        cardLink:String
-      },
-      computed: {
+export default {
+  name: "CatalogCard",
+  props: {
+    cardTitle: String,
+    cardNumber: String,
+    cardImg: String,
+    cardLink: String,
+  },
+  computed: {
     catalogCardImg() {
-      return './assets/imgs/catalog/' + this.cardImg
+      return "./assets/imgs/catalog/" + this.cardImg;
     },
-    catalogCardLink(){
-      return '/service-page-' + this.cardLink
-    }
-  }
-}
+    catalogCardLink() {
+      return "/service-page-" + this.cardLink;
+    },
+  },
+};
 </script>
 <style>
-
 .catalog__card {
-  width: calc(100% / 4);
+  width: calc(100% / 4 - 1rem);
   min-height: 60px;
-  /* margin: 30px; */
 }
 
 .catalog__cardBcg {
@@ -60,6 +55,7 @@ export default{
   width: 100%;
   height: 450px;
   background: rgba(0, 0, 0, 0.6);
+  transition: all 0.2s ease-in-out;
 }
 .catalog__card :hover .card-hover-background {
   display: block;
@@ -73,6 +69,7 @@ export default{
 .catalog__cardBorders {
   padding: 10px;
   border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
 }
 .catalog__card:hover .catalog__cardBorders {
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -119,6 +116,7 @@ export default{
 .catalog__card :hover .card-title {
   position: absolute;
   bottom: 90px;
+  
 }
 
 .catalog-link-button {
@@ -136,21 +134,22 @@ export default{
   left: 20px;
   display: none;
 }
-.catalog__card :hover .catalog-link-button {
+.catalog__card :hover a.catalog-link-button {
   display: block;
+  color:#010001;
 }
-@media screen and (max-width: 1110px){
-.catalog__card {
-  width:330px;
-}
-}
-@media screen and (max-width: 960px){
 
-}
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1200px) {
   .catalog__card {
-    width:310px;
-    min-height: 60px;
+    /* width:330px; */
+    width: calc(100% / 2 - 1rem);
   }
+}
+@media screen and (max-width: 960px) {
+  .catalog__card {
+    width: 310px;
+  }
+}
+@media screen and (max-width: 768px) {
 }
 </style>

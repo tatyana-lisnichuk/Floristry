@@ -27,9 +27,9 @@ export default{
   padding-top: 22px;
   border-bottom: 2px solid #fff;
   width: 86px;
-   margin:0 auto;
-
+  margin:0 auto;
 }
+
 .catalog__bcgTitle{
   font-size: 220px;
   line-height: 243px;
@@ -58,6 +58,9 @@ export default{
 @media screen and (max-width: 1260px){
   .catalog__bcgTitle{
     font-size: 140px;
+  }
+  .catalog__titleName {
+  margin-top: 0px;
   }
 }
 @media screen and (max-width: 1110px){

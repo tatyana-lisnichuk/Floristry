@@ -14,63 +14,27 @@
       @sliding-end="onSlideEnd"
     >
       <!-- Text slides with image -->
-    
       <b-carousel-slide
-        caption="First slide"
+        caption="Букет невесты и свадебное оформление"
         text="Nulla vitae elit libero, a pharetra augue mollis interdum."
         img-src="./assets/imgs/catalog/catalog-img1.jpg"
       ></b-carousel-slide>
        <b-carousel-slide
-        caption="First slide"
+        caption="Букеты на торжества"
         text="Nulla vitae elit libero, a pharetra augue mollis interdum."
         img-src="./assets/imgs/catalog/catalog-img2.jpg"
       ></b-carousel-slide>
        <b-carousel-slide
-        caption="First slide"
+        caption="Композиции"
         text="Nulla vitae elit libero, a pharetra augue mollis interdum."
         img-src="./assets/imgs/catalog/catalog-img3.jpg"
       ></b-carousel-slide>
        <b-carousel-slide
-        caption="First slide"
+        caption="Оформление мероприятий"
         text="Nulla vitae elit libero, a pharetra augue mollis interdum."
         img-src="./assets/imgs/catalog/catalog-img4.jpg"
       ></b-carousel-slide>
-
-      <!-- Slides with custom text -->
-      <!-- <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54">
-        <h1>Hello world!</h1>
-      </b-carousel-slide> -->
-
-      <!-- Slides with image only -->
-      <!-- <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=58"></b-carousel-slide> -->
-
-      <!-- Slides with img slot -->
-      <!-- Note the classes .d-block and .img-fluid to prevent browser default image alignment -->
-      <!-- <b-carousel-slide>
-        <template v-slot:img>
-          <img
-            class="d-block img-fluid w-100"
-            width="1024"
-            height="480"
-            src="https://picsum.photos/1024/480/?image=55"
-            alt="image slot"
-          >
-        </template>
-      </b-carousel-slide> -->
-
-      <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-      <!-- <b-carousel-slide caption="Blank Image" img-blank img-alt="Blank image">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros felis, tincidunt
-          a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum.
-        </p>
-      </b-carousel-slide> -->
     </b-carousel>
-
-    <!-- <p class="mt-4">
-      Slide #: {{ slide }}<br>
-      Sliding: {{ sliding }}
-    </p> -->
   </div>
 </template>
 
@@ -96,9 +60,10 @@
 .bootstrap-slider{
   display: none;
 }
-@media screen and (max-width: 350px){
+@media screen and (max-width: 768px){
 .bootstrap-slider{
   display: inherit;
+  padding:1rem;
 }
 }
 </style>

@@ -76,20 +76,20 @@ ul.sidebar-panel-nav > li > a {
   color:#ffffff;
   transform: scale(1.2);
  }
- @media screen and (max-width: 768px){
+@media screen and (max-width: 1050px){
  .menuSocialList{
   display: none;
   }
   .burger-position{
     /* margin-right: 0rem; */
   }
-  ul.sidebar-panel-nav > li > a {
-  font-size: 1.6rem;
-  margin:50px 0;
-}
-.sidebar-panel-nav{
-  max-width: 300px;
-}
+    ul.sidebar-panel-nav > li > a {
+    font-size: 1.6rem;
+    margin:50px 0;
+  }
+  .sidebar-panel-nav{
+    max-width: 300px;
+  }
  }
 
 @media screen and (max-width: 768px){

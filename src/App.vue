@@ -32,12 +32,17 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center; 
 }
-a{
-  text-decoration:none;
-
-  color: white;
+.site-wrapper {
+  margin: 0 auto;
+  max-width: 1920px;
+  width:100vw;
+  background: #3b181e;
+  padding-bottom:50px;
+  /* position: fixed; */
+  
 }
-a:hover{
+a, a:hover,
+a:active {
   text-decoration:none;
   color: white;
 }
@@ -75,8 +80,8 @@ input{
   padding:16px 30px;
   text-transform: uppercase;
   cursor:pointer;
-  transition: all 0.2s ease-in-out;
   outline: none;
+  transition: all 0.3s ease-in-out;
 
 }
 .brown-btn:hover{
@@ -93,6 +98,7 @@ background-color: #fff;
   margin-top: 52px;
   color: #ffffff;
   border-radius: 2px;
+  transition: all 0.3s ease-in-out;
 
 }
 .black-btn:hover{
@@ -110,18 +116,44 @@ background-color: #fff;
   border-radius: 5px;
   cursor: pointer;
   outline: none;
+  transition: all 0.3s ease-in-out;
 }
-.dark-btn:hover {
+a.dark-btn:hover {
   background: rgba(104, 91, 91, 0.8);
+  color: #ffffff;
+}
+a.brown-btn, a.brown-btn:hover, a.brown-btn:active,
+a.black-btn, a.black-btn:hover, a.black-btn:active,
+a.dark-btn, a.dark-btn:hover, a.dark-btn:active,
+li.sidebar-panel__item a, li.sidebar-panel__item a:hover,
+li.sidebar-panel__item a:active,
+a.footer-grid-item, a.footer-grid-item:hover, a.footer-grid-item:active,
+a.catalog-link-button, a.catalog-link-button:hover,  a.catalog-link-button:active
+{
+  text-decoration: none;
 }
 /* slick slider styles */
 .slick-slide{
     cursor: pointer;
    outline: none;
    padding:0 10px;
-    transition: all 0.9 ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 .slick-slide:hover{
   transform: scale(1.2);
+}
+.fixed{
+  position: fixed;
+}
+
+@media screen and (max-width: 768px){
+  .wrap-container {
+  padding: 0 60px;
+  }
+}
+@media screen and (max-width: 320px){
+  .wrap-container {
+  padding: 0 20px;
+  }
 }
 </style>
