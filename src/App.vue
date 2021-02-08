@@ -37,8 +37,7 @@ export default {
   max-width: 1920px;
   width:100vw;
   background: #3b181e;
-  padding-bottom:50px;
-  /* position: fixed; */
+  /* padding-bottom:50px; */
   
 }
 a, a:hover,

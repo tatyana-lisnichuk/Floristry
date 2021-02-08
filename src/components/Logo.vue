@@ -20,6 +20,11 @@ export default{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+.logo__img:hover{
+  opacity: 0.6;
+  transform: scale(1.1);
 }
 @media screen and (max-width: 450px){
 .logo {

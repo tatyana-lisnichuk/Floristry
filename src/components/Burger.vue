@@ -40,7 +40,7 @@ computed: {
   color:white;
   margin-left: 1.2rem;
   position:absolute;
-  top:108px;
+  top:109px;
   cursor: pointer;
 }
 button {

@@ -68,7 +68,9 @@
   }
 }
 @media screen and (max-width: 470px){
-
+ .slider-wrapper{
+ max-width: 290px;
+  }
   
 }
 </style>

@@ -44,7 +44,7 @@ export default{
   color: rgba(255, 255, 255, 0.5);
   position: absolute;
   left:95px;
-  bottom:-95px;
+  bottom:50px;
  }
 .burger-position{
   margin-right: 5rem;
@@ -79,9 +79,6 @@ ul.sidebar-panel-nav > li > a {
 @media screen and (max-width: 1050px){
  .menuSocialList{
   display: none;
-  }
-  .burger-position{
-    /* margin-right: 0rem; */
   }
     ul.sidebar-panel-nav > li > a {
     font-size: 1.6rem;

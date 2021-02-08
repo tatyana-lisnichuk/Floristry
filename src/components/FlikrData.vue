@@ -43,7 +43,7 @@ components:{
         params: {
           method: 'flickr.photos.search',
           api_key: '7b795fb92875bd8c213bccaf59304dcc',
-          tags:"bouquets , flower , floristry",
+          tags:"floristry",
           extras: 'url_n',
           page: 1,
           format: 'json',

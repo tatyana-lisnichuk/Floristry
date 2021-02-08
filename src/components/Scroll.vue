@@ -15,12 +15,15 @@ export default{
   position: relative;
   display: flex;
   justify-content: center;
+   background-color: #fff;
 }
 .scroll__innerWrapper{
   width: 40px;
-  height: 59px;
+  height: 61px;
   position: absolute;
+  right:-15%;
   bottom: 0;
+ 
 }
 @media screen and (max-width: 768px){
   .scroll {

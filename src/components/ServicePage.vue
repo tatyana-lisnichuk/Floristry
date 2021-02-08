@@ -97,7 +97,7 @@ export default {
   max-width: 370px;
   text-align: left;
   font-weight: 400;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .service-page main p {
   font-size: 18px;
@@ -106,7 +106,7 @@ export default {
   margin-bottom: 30px;
 }
 .service-page__text-part {
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   position: relative;
 }
 .service-page__brown-btn {

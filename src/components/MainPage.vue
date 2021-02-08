@@ -368,7 +368,7 @@ export default{
   }
 }
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 400px){
   .main__title {
   font-size: 30px;
 

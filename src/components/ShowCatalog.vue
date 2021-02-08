@@ -40,6 +40,10 @@ margin-left:-5rem;
  margin-top: 5rem;
 
 }
+.showCatalog__text:hover, 
+.showCatalog__icon:hover {
+opacity: 0.6;
+}
 .showCatalog__icon{
   width: 14px;
   height: 14px;

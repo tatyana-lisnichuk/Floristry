@@ -58,7 +58,7 @@ export default{
 }
 @media screen and (max-width: 420px){
   .socials-list {
-  /* gap:40px; */
+  display: none;
 }
 }
 </style>

@@ -23,6 +23,9 @@ import SocialList from '@/components/SocialList';
   }
 </script>
 <style>
+.footer{
+  padding-bottom:30px;
+}
 .footer-line {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   max-width: 1816px;
