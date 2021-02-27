@@ -146,4 +146,10 @@ form.modal__form{
  max-width: 370px;
 }
 }
+@media screen and (max-width: 320px){
+.modal__right{
+   padding:10px;
+}
+
+}
 </style>

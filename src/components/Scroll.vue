@@ -18,8 +18,8 @@ export default{
    background-color: #fff;
 }
 .scroll__innerWrapper{
-  width: 40px;
-  height: 61px;
+  width: 42px;
+  height: 62px;
   position: absolute;
   right:-15%;
   bottom: 0;
