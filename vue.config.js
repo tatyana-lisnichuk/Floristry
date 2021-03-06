@@ -6,3 +6,14 @@ module.exports = {
     ? '/Floristry/'
     : '/'
 }
+
+
+// файл vue.config.js должен быть расположен в корневом каталоге проекта
+
+module.exports = {
+  pwa: {
+      workboxOptions: {
+        exclude: [/_redirects/]
+      }
+    }
+}
